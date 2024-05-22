@@ -1,0 +1,117 @@
+.product-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 240px;
+    height: 420px;
+    margin: 10px;
+    border-radius: 8px;
+}
+
+.product-image {
+    width: 100%;
+    height: 200px; 
+    object-fit: cover; 
+}
+
+.product-meta {
+    flex-grow: 1;
+    font-size: 10pt;
+}
+
+.product-details {
+    margin-top: 10px;
+}
+
+.product-reviews {
+    margin-top: 10px; 
+}
+
+.list-price {
+    text-decoration: line-through;
+    color: red;
+    margin-right: 5px;
+}
+
+.current-price {
+    font-weight: bold;
+}
+
+.save-amount {
+    color: green;
+    margin-left: 3px;
+}
+
+.best-seller {
+    display: block;
+    margin-top: 10px;
+}
+
+.probability-display {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.probability-value {
+    font-size: 24px;
+    font-weight: bold;
+    margin-top: 10px;
+    color: #1890ff;
+    animation: pulse 2s infinite;
+}
+
+.flip-card-back {
+    background-color: lemonchiffon;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    width: 240px;
+    height: 420px;
+    margin: 10px;
+}
+
+.flip-card-front, .flip-card-back {
+    border-radius: 8px; 
+}
+
+.show-probability-button {
+    width: 100%;
+    background: linear-gradient(45deg, #ff6f61, #ff915f);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s, background 0.3s;
+    position: relative;
+    margin-top: 20px; 
+    margin-bottom: 20px;
+}
+
+    .show-probability-button:hover {
+        background: linear-gradient(45deg, #ff915f, #ff6f61);
+        transform: translateY(-2px);
+    }
+
+.product-meta-description {
+    font-size: 1em;
+    color: #666;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.view-on-amazon-button {
+    font-size: 1em;
+    font-weight: bold; 
+    color: #1890ff; 
+    text-decoration: underline; 
+    padding: 8px 16px; 
+    background-color: rgba(255, 255, 255, 0.9); 
+    border-radius: 4px;
+    margin-top: 10px; 
+    display: block;
+    text-align: center; 
+}

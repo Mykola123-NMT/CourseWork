@@ -1,0 +1,562 @@
+﻿{
+  "Scenario": "Classification",
+  "DataSource": {
+    "Type": "TabularFile",
+    "Version": 1,
+    "FilePath": "C:\\Users\\mykola\\Documents\\10 семестр\\Курсова\\Amazon Products\\amazon_products.csv",
+    "Delimiter": ",",
+    "DecimalMarker": ".",
+    "HasHeader": true,
+    "ColumnProperties": [
+      {
+        "ColumnName": "asin",
+        "ColumnPurpose": "Ignore",
+        "ColumnDataFormat": "String",
+        "IsCategorical": false,
+        "Type": "Column",
+        "Version": 4
+      },
+      {
+        "ColumnName": "title",
+        "ColumnPurpose": "Ignore",
+        "ColumnDataFormat": "String",
+        "IsCategorical": false,
+        "Type": "Column",
+        "Version": 4
+      },
+      {
+        "ColumnName": "imgUrl",
+        "ColumnPurpose": "Ignore",
+        "ColumnDataFormat": "String",
+        "IsCategorical": false,
+        "Type": "Column",
+        "Version": 4
+      },
+      {
+        "ColumnName": "productURL",
+        "ColumnPurpose": "Ignore",
+        "ColumnDataFormat": "String",
+        "IsCategorical": false,
+        "Type": "Column",
+        "Version": 4
+      },
+      {
+        "ColumnName": "stars",
+        "ColumnPurpose": "Feature",
+        "ColumnDataFormat": "Single",
+        "IsCategorical": false,
+        "Type": "Column",
+        "Version": 4
+      },
+      {
+        "ColumnName": "reviews",
+        "ColumnPurpose": "Feature",
+        "ColumnDataFormat": "Single",
+        "IsCategorical": false,
+        "Type": "Column",
+        "Version": 4
+      },
+      {
+        "ColumnName": "price",
+        "ColumnPurpose": "Feature",
+        "ColumnDataFormat": "Single",
+        "IsCategorical": false,
+        "Type": "Column",
+        "Version": 4
+      },
+      {
+        "ColumnName": "listPrice",
+        "ColumnPurpose": "Feature",
+        "ColumnDataFormat": "Single",
+        "IsCategorical": false,
+        "Type": "Column",
+        "Version": 4
+      },
+      {
+        "ColumnName": "category_id",
+        "ColumnPurpose": "Feature",
+        "ColumnDataFormat": "Single",
+        "IsCategorical": false,
+        "Type": "Column",
+        "Version": 4
+      },
+      {
+        "ColumnName": "isBestSeller",
+        "ColumnPurpose": "Label",
+        "ColumnDataFormat": "Boolean",
+        "IsCategorical": true,
+        "Type": "Column",
+        "Version": 4
+      },
+      {
+        "ColumnName": "boughtInLastMonth",
+        "ColumnPurpose": "Feature",
+        "ColumnDataFormat": "Single",
+        "IsCategorical": false,
+        "Type": "Column",
+        "Version": 4
+      }
+    ]
+  },
+  "Environment": {
+    "Type": "LocalCPU",
+    "Version": 1
+  },
+  "RunHistory": {
+    "Version": 3,
+    "Type": "Result",
+    "Trials": [
+      {
+        "Version": 1,
+        "Type": "Trial",
+        "TrainerName": "FastForestBinary",
+        "Score": 0.99423429872859792,
+        "RuntimeInSeconds": 57.424,
+        "Parameter": {
+          "_SCHEMA_": "e0 * e1 * e6 * e7",
+          "e0": {
+            "OutputColumnNames": [
+              "stars",
+              "reviews",
+              "price",
+              "listPrice",
+              "category_id",
+              "boughtInLastMonth"
+            ],
+            "InputColumnNames": [
+              "stars",
+              "reviews",
+              "price",
+              "listPrice",
+              "category_id",
+              "boughtInLastMonth"
+            ]
+          },
+          "e1": {
+            "InputColumnNames": [
+              "stars",
+              "reviews",
+              "price",
+              "listPrice",
+              "category_id",
+              "boughtInLastMonth"
+            ],
+            "OutputColumnName": "Features"
+          },
+          "e6": {
+            "NumberOfTrees": 25,
+            "NumberOfLeaves": 14592,
+            "FeatureFraction": 0.7878529,
+            "LabelColumnName": "isBestSeller",
+            "FeatureColumnName": "Features"
+          },
+          "e7": {
+            "LabelColumnName": "isBestSeller",
+            "ScoreColumnName": "Score"
+          },
+          "e2": {
+            "NumberOfLeaves": 4,
+            "MinimumExampleCountPerLeaf": 20,
+            "NumberOfTrees": 4,
+            "MaximumBinCountPerFeature": 255,
+            "FeatureFraction": 1.0,
+            "LearningRate": 0.099999999999999978,
+            "LabelColumnName": "isBestSeller",
+            "FeatureColumnName": "Features"
+          },
+          "e3": {
+            "NumberOfLeaves": 4,
+            "MinimumExampleCountPerLeaf": 20,
+            "LearningRate": 1.0,
+            "NumberOfTrees": 4,
+            "SubsampleFraction": 1.0,
+            "MaximumBinCountPerFeature": 255,
+            "FeatureFraction": 1.0,
+            "L1Regularization": 2E-10,
+            "L2Regularization": 1.0,
+            "LabelColumnName": "isBestSeller",
+            "FeatureColumnName": "Features"
+          },
+          "e4": {
+            "L1Regularization": 1.0,
+            "L2Regularization": 1.0,
+            "LabelColumnName": "isBestSeller",
+            "FeatureColumnName": "Features"
+          },
+          "e5": {
+            "L1Regularization": 1.0,
+            "L2Regularization": 0.1,
+            "LabelColumnName": "isBestSeller",
+            "FeatureColumnName": "Features"
+          }
+        }
+      },
+      {
+        "Version": 1,
+        "Type": "Trial",
+        "TrainerName": "FastForestBinary",
+        "Score": 0.99422728022431139,
+        "RuntimeInSeconds": 451.957,
+        "Parameter": {
+          "_SCHEMA_": "e0 * e1 * e6 * e7",
+          "e0": {
+            "OutputColumnNames": [
+              "stars",
+              "reviews",
+              "price",
+              "listPrice",
+              "category_id",
+              "boughtInLastMonth"
+            ],
+            "InputColumnNames": [
+              "stars",
+              "reviews",
+              "price",
+              "listPrice",
+              "category_id",
+              "boughtInLastMonth"
+            ]
+          },
+          "e1": {
+            "InputColumnNames": [
+              "stars",
+              "reviews",
+              "price",
+              "listPrice",
+              "category_id",
+              "boughtInLastMonth"
+            ],
+            "OutputColumnName": "Features"
+          },
+          "e6": {
+            "NumberOfTrees": 1054,
+            "NumberOfLeaves": 981,
+            "FeatureFraction": 1.0,
+            "LabelColumnName": "isBestSeller",
+            "FeatureColumnName": "Features"
+          },
+          "e7": {
+            "LabelColumnName": "isBestSeller",
+            "ScoreColumnName": "Score"
+          },
+          "e2": {
+            "NumberOfLeaves": 4,
+            "MinimumExampleCountPerLeaf": 20,
+            "NumberOfTrees": 4,
+            "MaximumBinCountPerFeature": 255,
+            "FeatureFraction": 1.0,
+            "LearningRate": 0.099999999999999978,
+            "LabelColumnName": "isBestSeller",
+            "FeatureColumnName": "Features"
+          },
+          "e3": {
+            "NumberOfLeaves": 4,
+            "MinimumExampleCountPerLeaf": 20,
+            "LearningRate": 1.0,
+            "NumberOfTrees": 4,
+            "SubsampleFraction": 1.0,
+            "MaximumBinCountPerFeature": 255,
+            "FeatureFraction": 1.0,
+            "L1Regularization": 2E-10,
+            "L2Regularization": 1.0,
+            "LabelColumnName": "isBestSeller",
+            "FeatureColumnName": "Features"
+          },
+          "e4": {
+            "L1Regularization": 1.0,
+            "L2Regularization": 1.0,
+            "LabelColumnName": "isBestSeller",
+            "FeatureColumnName": "Features"
+          },
+          "e5": {
+            "L1Regularization": 1.0,
+            "L2Regularization": 0.1,
+            "LabelColumnName": "isBestSeller",
+            "FeatureColumnName": "Features"
+          }
+        }
+      },
+      {
+        "Version": 1,
+        "Type": "Trial",
+        "TrainerName": "FastTreeBinary",
+        "Score": 0.99422377097216807,
+        "RuntimeInSeconds": 6.902,
+        "Parameter": {
+          "_SCHEMA_": "e0 * e1 * e2",
+          "e0": {
+            "OutputColumnNames": [
+              "stars",
+              "reviews",
+              "price",
+              "listPrice",
+              "category_id",
+              "boughtInLastMonth"
+            ],
+            "InputColumnNames": [
+              "stars",
+              "reviews",
+              "price",
+              "listPrice",
+              "category_id",
+              "boughtInLastMonth"
+            ]
+          },
+          "e1": {
+            "InputColumnNames": [
+              "stars",
+              "reviews",
+              "price",
+              "listPrice",
+              "category_id",
+              "boughtInLastMonth"
+            ],
+            "OutputColumnName": "Features"
+          },
+          "e2": {
+            "NumberOfLeaves": 9,
+            "MinimumExampleCountPerLeaf": 14,
+            "NumberOfTrees": 4,
+            "MaximumBinCountPerFeature": 360,
+            "FeatureFraction": 0.99999999,
+            "LearningRate": 0.58450355203565862,
+            "LabelColumnName": "isBestSeller",
+            "FeatureColumnName": "Features"
+          },
+          "e3": {
+            "NumberOfLeaves": 4,
+            "MinimumExampleCountPerLeaf": 20,
+            "LearningRate": 1.0,
+            "NumberOfTrees": 4,
+            "SubsampleFraction": 1.0,
+            "MaximumBinCountPerFeature": 255,
+            "FeatureFraction": 1.0,
+            "L1Regularization": 2E-10,
+            "L2Regularization": 1.0,
+            "LabelColumnName": "isBestSeller",
+            "FeatureColumnName": "Features"
+          },
+          "e4": {
+            "L1Regularization": 1.0,
+            "L2Regularization": 1.0,
+            "LabelColumnName": "isBestSeller",
+            "FeatureColumnName": "Features"
+          },
+          "e5": {
+            "L1Regularization": 1.0,
+            "L2Regularization": 0.1,
+            "LabelColumnName": "isBestSeller",
+            "FeatureColumnName": "Features"
+          },
+          "e6": {
+            "NumberOfTrees": 4,
+            "NumberOfLeaves": 4,
+            "FeatureFraction": 1.0,
+            "LabelColumnName": "isBestSeller",
+            "FeatureColumnName": "Features"
+          },
+          "e7": {
+            "LabelColumnName": "isBestSeller",
+            "ScoreColumnName": "Score"
+          }
+        }
+      },
+      {
+        "Version": 1,
+        "Type": "Trial",
+        "TrainerName": "FastForestBinary",
+        "Score": 0.99422377097216807,
+        "RuntimeInSeconds": 15.39,
+        "Parameter": {
+          "_SCHEMA_": "e0 * e1 * e6 * e7",
+          "e0": {
+            "OutputColumnNames": [
+              "stars",
+              "reviews",
+              "price",
+              "listPrice",
+              "category_id",
+              "boughtInLastMonth"
+            ],
+            "InputColumnNames": [
+              "stars",
+              "reviews",
+              "price",
+              "listPrice",
+              "category_id",
+              "boughtInLastMonth"
+            ]
+          },
+          "e1": {
+            "InputColumnNames": [
+              "stars",
+              "reviews",
+              "price",
+              "listPrice",
+              "category_id",
+              "boughtInLastMonth"
+            ],
+            "OutputColumnName": "Features"
+          },
+          "e6": {
+            "NumberOfTrees": 51,
+            "NumberOfLeaves": 253,
+            "FeatureFraction": 1.0,
+            "LabelColumnName": "isBestSeller",
+            "FeatureColumnName": "Features"
+          },
+          "e7": {
+            "LabelColumnName": "isBestSeller",
+            "ScoreColumnName": "Score"
+          },
+          "e2": {
+            "NumberOfLeaves": 4,
+            "MinimumExampleCountPerLeaf": 20,
+            "NumberOfTrees": 4,
+            "MaximumBinCountPerFeature": 255,
+            "FeatureFraction": 1.0,
+            "LearningRate": 0.099999999999999978,
+            "LabelColumnName": "isBestSeller",
+            "FeatureColumnName": "Features"
+          },
+          "e3": {
+            "NumberOfLeaves": 4,
+            "MinimumExampleCountPerLeaf": 20,
+            "LearningRate": 1.0,
+            "NumberOfTrees": 4,
+            "SubsampleFraction": 1.0,
+            "MaximumBinCountPerFeature": 255,
+            "FeatureFraction": 1.0,
+            "L1Regularization": 2E-10,
+            "L2Regularization": 1.0,
+            "LabelColumnName": "isBestSeller",
+            "FeatureColumnName": "Features"
+          },
+          "e4": {
+            "L1Regularization": 1.0,
+            "L2Regularization": 1.0,
+            "LabelColumnName": "isBestSeller",
+            "FeatureColumnName": "Features"
+          },
+          "e5": {
+            "L1Regularization": 1.0,
+            "L2Regularization": 0.1,
+            "LabelColumnName": "isBestSeller",
+            "FeatureColumnName": "Features"
+          }
+        }
+      },
+      {
+        "Version": 1,
+        "Type": "Trial",
+        "TrainerName": "FastTreeBinary",
+        "Score": 0.99422377097216807,
+        "RuntimeInSeconds": 13.12,
+        "Parameter": {
+          "_SCHEMA_": "e0 * e1 * e2",
+          "e0": {
+            "OutputColumnNames": [
+              "stars",
+              "reviews",
+              "price",
+              "listPrice",
+              "category_id",
+              "boughtInLastMonth"
+            ],
+            "InputColumnNames": [
+              "stars",
+              "reviews",
+              "price",
+              "listPrice",
+              "category_id",
+              "boughtInLastMonth"
+            ]
+          },
+          "e1": {
+            "InputColumnNames": [
+              "stars",
+              "reviews",
+              "price",
+              "listPrice",
+              "category_id",
+              "boughtInLastMonth"
+            ],
+            "OutputColumnName": "Features"
+          },
+          "e2": {
+            "NumberOfLeaves": 9,
+            "MinimumExampleCountPerLeaf": 14,
+            "NumberOfTrees": 4,
+            "MaximumBinCountPerFeature": 362,
+            "FeatureFraction": 0.99830013803702833,
+            "LearningRate": 0.58766818710680979,
+            "LabelColumnName": "isBestSeller",
+            "FeatureColumnName": "Features"
+          },
+          "e3": {
+            "NumberOfLeaves": 4,
+            "MinimumExampleCountPerLeaf": 20,
+            "LearningRate": 1.0,
+            "NumberOfTrees": 4,
+            "SubsampleFraction": 1.0,
+            "MaximumBinCountPerFeature": 255,
+            "FeatureFraction": 1.0,
+            "L1Regularization": 2E-10,
+            "L2Regularization": 1.0,
+            "LabelColumnName": "isBestSeller",
+            "FeatureColumnName": "Features"
+          },
+          "e4": {
+            "L1Regularization": 1.0,
+            "L2Regularization": 1.0,
+            "LabelColumnName": "isBestSeller",
+            "FeatureColumnName": "Features"
+          },
+          "e5": {
+            "L1Regularization": 1.0,
+            "L2Regularization": 0.1,
+            "LabelColumnName": "isBestSeller",
+            "FeatureColumnName": "Features"
+          },
+          "e6": {
+            "NumberOfTrees": 4,
+            "NumberOfLeaves": 4,
+            "FeatureFraction": 1.0,
+            "LabelColumnName": "isBestSeller",
+            "FeatureColumnName": "Features"
+          },
+          "e7": {
+            "LabelColumnName": "isBestSeller",
+            "ScoreColumnName": "Score"
+          }
+        }
+      }
+    ],
+    "Estimators": {
+      "e0": "ReplaceMissingValues",
+      "e1": "Concatenate",
+      "e2": "FastTreeBinary",
+      "e3": "LightGbmBinary",
+      "e4": "LbfgsLogisticRegressionBinary",
+      "e5": "SdcaLogisticRegressionBinary",
+      "e6": "FastForestBinary",
+      "e7": "Naive"
+    },
+    "Schema": "e0 * e1 * (e2 + e3 + e4 + e5 + e6 * e7)",
+    "MetricName": "Accuracy",
+    "ModelFilePath": "C:\\Users\\mykola\\Documents\\10 семестр\\Курсова\\CourseWork\\CourseWork.Server\\MLModel.mlnet"
+  },
+  "Type": "TrainingConfig",
+  "Version": 4,
+  "TrainingOption": {
+    "Version": 1,
+    "Type": "ClassificationTrainingOption",
+    "TrainingTime": 1800,
+    "LabelColumn": "isBestSeller",
+    "ValidationOption": {
+      "Version": 0,
+      "Type": "TrainValidateSplitValidationOption",
+      "SplitRatio": 0.2
+    }
+  }
+}
